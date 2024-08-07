@@ -4,6 +4,7 @@ export default function DisplayName()
 {
     const [header,SetHeader]= useState(' ');
     const handleSubmit=(e)=>{
+        debugger;
         SetHeader(e.target.elements.Firstname.value+" "+e.target.elements.Lastname.value)
     e.preventDefault();
     }
@@ -17,11 +18,11 @@ export default function DisplayName()
             }}>
             <label>
                 First Name :
-                <input type="text" name="Firstname"/>
+                <input type="text" name="Firstname" required/>
             </label>
             <label>
                 Last Name :
-                <input type="text" name="Lastname"/>
+                <input type="text" name="Lastname" required/>
             </label>
             <button type="submit" style={{width:"50px"}}>Submit</button>
         </form>
