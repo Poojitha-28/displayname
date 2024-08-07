@@ -3,9 +3,11 @@ import React, { useState } from "react";
 export default function DisplayName()
 {
     const [header,SetHeader]= useState(' ');
+    const [show,setShow] = useState(false);
     const handleSubmit=(e)=>{
         debugger;
-        SetHeader(e.target.elements.Firstname.value+" "+e.target.elements.Lastname.value)
+        SetHeader(e.target.elements.Firstname.value+" "+e.target.elements.Lastname.value);
+        setShow(true);
     e.preventDefault();
     }
     return(
@@ -26,7 +28,7 @@ export default function DisplayName()
             </label>
             <button type="submit" style={{width:"50px"}}>Submit</button>
         </form>
-        <p>Full Name: {header}</p>
+        {show && <p>Full Name: {header}</p>}
         </div>
     )
 }
